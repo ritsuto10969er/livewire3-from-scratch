@@ -8,5 +8,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/search', Search::class);
+// Route::get('/search', Search::class);
 Route::get('/articles/{id}', ShowArticle::class);
