@@ -19,7 +19,13 @@
         <!-- Livewire Styles -->
         @livewireStyles
     </head>
-    <main>
-        {{$slot}}
-    </main>
+    <body>
+        <header>
+            <livewire:search placeholder="$placeholder">
+        </header>
+        
+        <main>
+            {{$slot}}
+        </main>
+    </body>
 </html>

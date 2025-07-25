@@ -33,57 +33,6 @@
                 </div>
             </form>
         </div>
-
-        <!-- Search Results -->
-        @if(count($results) > 0)
-            <div class="mb-6">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4">
-                    Found {{ count($results) }} {{ count($results) === 1 ? 'article' : 'articles' }}
-                </h2>
-            </div>
-            
-            <div class="space-y-4">
-                @foreach ($results as $result)
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition duration-200">
-                        <div class="flex items-start justify-between">
-                            <div class="flex-1">
-                                <h3 class="text-lg font-medium text-gray-900 mb-2">
-                                    <a href="/articles/{{$result->id}}">{{ $result->title }}</a>
-                                </h3>
-                                <p class="text-gray-600 text-sm line-clamp-3">
-                                    {{ Str::limit($result->content, 150) }}
-                                </p>
-                                <div class="mt-3 flex items-center text-xs text-gray-500">
-                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                    </svg>
-                                    {{ $result->created_at->diffForHumans() }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @elseif(!empty($searchText))
-            <div class="text-center py-12">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-                    <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656-5.656m0 0a4 4 0 015.656 5.656m-11.314 0a8 8 0 1111.314-11.314"></path>
-                    </svg>
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">No articles found</h3>
-                    <p class="text-gray-500">Try adjusting your search terms or browse all articles.</p>
-                </div>
-            </div>
-        @else
-            <div class="text-center py-12">
-                <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-                    <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                    </svg>
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">Start searching</h3>
-                    <p class="text-gray-500">Enter a search term above to find articles.</p>
-                </div>
-            </div>
-        @endif
+        <livewire:search-results :results="$results">
     </div>
 </div>
