@@ -23,13 +23,6 @@
                             placeholder="Search for articles..."
                         >
                     </div>
-                    <button 
-                        type="button"
-                        class="px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg border border-gray-300 shadow-sm transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400 whitespace-nowrap"
-                        wire:click.prevent='clear()'
-                    >
-                        Clear
-                    </button>
                 </div>
             </form>
         </div>

@@ -9,6 +9,7 @@ class SearchResults extends Component
 {   
     #[Reactive]
     public $results = [];
+    
     public function render()
     {
         return view('livewire.search-results');

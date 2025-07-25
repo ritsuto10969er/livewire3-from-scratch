@@ -19,7 +19,7 @@
         <!-- Livewire Styles -->
         @livewireStyles
     </head>
-    <body>
+    <body x-data x-on:click="$dispatch('search:clear-results')">
         <header>
             <livewire:search placeholder="$placeholder">
         </header>
