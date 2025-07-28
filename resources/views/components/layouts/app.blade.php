@@ -20,9 +20,31 @@
         @livewireStyles
     </head>
     <body x-data x-on:click="$dispatch('search:clear-results')">
-        <header>
-            <livewire:search placeholder="$placeholder">
-        </header>
+        <!-- Navigation Bar -->
+        <nav class="bg-white shadow-sm border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <!-- Left side - Logo/Navigation -->
+                    <div class="flex items-center space-x-8">
+                        <div class="flex-shrink-0">
+                            <h1 class="text-xl font-bold text-gray-900">MyBlog</h1>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                                <a href="/articles" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+                                <a href="/about" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side - Search -->
+                    <div class="flex-shrink-0">
+                        <livewire:search placeholder="Search articles...">
+                    </div>
+                </div>
+            </div>
+        </nav>
         
         <main>
             {{$slot}}

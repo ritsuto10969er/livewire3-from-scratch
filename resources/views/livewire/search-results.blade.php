@@ -1,27 +1,25 @@
-<div>
-    <!-- Search Results -->
-    @if (count($results) > 0)
-        <div class="space-y-4">
-            {{-- <div class="flex justify-end mb-4">
-                <button
-                    type="button"
-                    wire:click="$dispatch('search:clear-results')"
-                    class="w-8 h-8 bg-gray-100 hover:bg-gray-200 text-gray-600 rounded-full flex items-center justify-center transition duration-200 hover:text-gray-800"
-                >
-                    x
-                </button>
-            </div> --}}
+<!-- Search Results Dropdown -->
+@if (count($results) > 0)
+    <div class="bg-white rounded-lg shadow-lg border border-gray-200 max-h-96 overflow-y-auto">
+        <div class="p-2">
+            <div class="text-xs text-gray-500 px-3 py-2 border-b border-gray-100">
+                {{ count($results) }} {{ count($results) === 1 ? 'result' : 'results' }} found
+            </div>
             @foreach ($results as $result)
-                <div
-                    class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition duration-200">
-                    <h3 class="text-lg font-medium text-gray-900 mb-2">
-                        <a href="/articles/{{ $result->id }}">{{ $result->title }}</a>
+                <div 
+                    class="p-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 cursor-pointer transition duration-150"
+                    wire:key='{{$result->id}}'
+                >
+                    <h3 class="text-sm font-medium text-gray-900 mb-1">
+                        <a href="/articles/{{ $result->id }}" class="hover:text-blue-600">
+                            {{ $result->title }}
+                        </a>
                     </h3>
-                    <p class="text-gray-600 text-sm">
-                        {{ Str::limit($result->content, 150) }}
+                    <p class="text-xs text-gray-600 line-clamp-2">
+                        {{ Str::limit($result->content, 100) }}
                     </p>
                 </div>
             @endforeach
         </div>
-    @endif
-</div>
+    </div>
+@endif
