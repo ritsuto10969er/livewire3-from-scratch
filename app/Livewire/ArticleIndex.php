@@ -4,7 +4,9 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Article;
+use Livewire\Attributes\Title;
 
+#[Title('Articles')]
 class ArticleIndex extends Component
 {
     public $articles = [];
