@@ -27,20 +27,13 @@
                     <!-- Left side - Logo/Navigation -->
                     <div class="flex items-center space-x-8">
                         <div class="flex-shrink-0">
-                            <h1 class="text-xl font-bold text-gray-900">MyBlog</h1>
+                            <h1 class="text-xl font-bold text-gray-900">Admin Dashboard</h1>
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                                <a href="/articles" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Articles</a>
-                                <a href="/dashboard" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                                <a href="/dashboard/articles" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Articles</a>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Right side - Search -->
-                    <div class="flex-shrink-0">
-                        <livewire:search placeholder="Search articles...">
                     </div>
                 </div>
             </div>
